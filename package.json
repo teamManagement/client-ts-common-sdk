@@ -1,0 +1,23 @@
+{
+  "name": "@byzk/teamwork-sdk",
+  "version": "0.1.0",
+  "description": "博雅中科 teamwork 平台客户端sdk",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*",
+    "docs/**/*",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsc && yarn doc",
+    "doc": "typedoc --tsconfig tsconfig.json --out docs src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typedoc": "^0.23.20",
+    "typescript": "^4.8.4"
+  }
+}
