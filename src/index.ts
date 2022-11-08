@@ -1,6 +1,8 @@
 const _windows = window as any;
 const _teamworkSdk = _windows.teamworkSDK;
 
+
+
 //#region electronApi代理
 export interface MenuItem {
   role?:
@@ -94,7 +96,7 @@ export interface ContextMenu {
 
 //#endregion
 
-const _contextmenuSdk = _windows.contextmenu;
+const _contextmenuSdk = _teamworkSdk.contextmenu;
 /**
  * 右键菜单
  */
@@ -146,3 +148,44 @@ export const store = {
     return _storeSdk.get(key, defaultValue);
   },
 };
+
+
+/**
+ * hosts相关
+ */
+
+const _hostsSdk = _teamworkSdk.hosts;
+
+export const hosts={
+   /**
+   * 向host文件中添加行
+   * @param lines 要添加的行
+   */
+   add(...line: string[]): Promise<void> {
+    return _hostsSdk.add(line)
+  },
+  /**
+   * 向host文件中添加行
+   * @param line 要添加的行
+   */
+  addToHeader(...line: string[]): Promise<void> {
+    return _hostsSdk.addToHeader(line)
+  },
+  /**
+   * 导出内容
+   * @returns hosts内容
+   */
+  export(): Promise<string> {
+    return _hostsSdk.export()
+  },
+  /**
+   * 覆盖原有的hosts内容
+   * @param newHostsContent 新的hosts文件内容
+   */
+  cover(newHostsContent: string): Promise<void> {
+    return  _hostsSdk.cover(newHostsContent)
+  },
+  delete(dnsOrIp: string): Promise<void> {
+    return _hostsSdk.delete(dnsOrIp)
+  }
+}
