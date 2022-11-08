@@ -313,6 +313,10 @@ export interface AppInfo {
    * 是否正在加载中
    */
   loading?: boolean;
+  /**
+   * 是否正在处于debug
+   */
+  debugging?: boolean;
 }
 
 const _currentSdk = _teamworkSdk.current;
