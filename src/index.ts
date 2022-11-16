@@ -99,7 +99,7 @@ export const proxy = {
   },
 };
 
-const _cacheSdk = _teamworkSdk.proxy;
+const _cacheSdk = _teamworkSdk.cache;
 const _cacheFileSdk = _cacheSdk.file;
 /**
  * 缓存相关
@@ -280,7 +280,7 @@ export interface AppInfo {
   /**
    * 应用类别
    */
-  type: AppType;
+  type?: AppType;
   /**
    * 远程地址
    */
