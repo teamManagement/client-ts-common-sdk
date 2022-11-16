@@ -209,13 +209,25 @@ export interface AppInfo {
      */
     name: string;
     /**
+     * 作者ID
+     */
+    authId: string;
+    /**
+     * 作者信息
+     */
+    authorInfo: UserInfo;
+    /**
+     * 贡献者列表
+     */
+    contributorsList: UserInfo[];
+    /**
      * 是否为内部API应用
      */
     inside: boolean;
     /**
      * 应用类别
      */
-    type: AppType;
+    type?: AppType;
     /**
      * 远程地址
      */
@@ -503,4 +515,8 @@ export interface UserInfo {
      * 机构信息
      */
     orgList?: UserOrgInfo[];
+    /**
+     * 当前机构信息
+     */
+    nowOrgInfo?: UserOrgInfo[];
 }

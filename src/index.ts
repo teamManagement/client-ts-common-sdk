@@ -262,6 +262,17 @@ export enum IconType {
 }
 
 /**
+ * 轮播图类别
+ */
+export interface SlideInfo{
+  
+  /**
+   * image信息
+   */
+  value:string;
+}
+
+/**
  * 应用信息
  */
 export interface AppInfo {
@@ -321,6 +332,10 @@ export interface AppInfo {
    * 版本
    */
   version: string;
+   /**
+  *轮播图
+  */
+  slideshow:SlideInfo[];
   /**
    * 是否正在加载中
    */
@@ -329,6 +344,7 @@ export interface AppInfo {
    * 是否正在处于debug
    */
   debugging?: boolean;
+ 
 }
 
 const _currentSdk = _teamworkSdk.current;
@@ -436,7 +452,7 @@ export const contextmenu = {
   },
 };
 
-/**z
+/**
  * 机构信息
  */
 export interface OrgInfo {
