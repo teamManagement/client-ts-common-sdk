@@ -346,3 +346,161 @@ export declare const contextmenu: {
      */
     clearAll(): void;
 };
+/**z
+ * 机构信息
+ */
+export interface OrgInfo {
+    /**
+     * 机构ID
+     */
+    id: string;
+    /**
+     * 机构名称
+     */
+    name: string;
+    /**
+     * 上级机构ID
+     */
+    pid: string;
+    /**
+     * 机构图标
+     */
+    icon?: string;
+    /**
+     * 机构描述
+     */
+    desc?: string;
+    /**
+     * 创建者ID
+     */
+    createUserId: string;
+    /**
+     * 子级机构
+     */
+    children?: OrgInfo[];
+    /**
+     * 子级ID列表
+     */
+    childrenIdList?: string[];
+    /**
+     * 上级机构信息
+     */
+    parent?: OrgInfo;
+    /**
+     * 上级ID列表
+     */
+    parentIdList?: string[];
+}
+/**
+ * 岗位信息
+ */
+export interface PostInfo {
+    /**
+     * 岗位ID
+     */
+    id: string;
+    /**
+     * 岗位名称
+     */
+    name: string;
+}
+/**
+ * 职位信息
+ */
+export interface JobInfo {
+    /**
+     * 职位ID
+     */
+    id: string;
+    /**
+     * 职位名称
+     */
+    name: string;
+}
+/**
+ * 用户机构信息
+ */
+export interface UserOrgInfo {
+    /**
+     * 机构信息
+     */
+    org: OrgInfo;
+    /**
+     * 岗位信息
+     */
+    post: PostInfo;
+    /**
+     * 职位信息
+     */
+    job: JobInfo;
+    /**
+     * 是否为主管
+     */
+    isMain: boolean;
+}
+/**
+ * 性别
+ */
+export declare enum Sex {
+    /**
+     * 男
+     */
+    MAN = 1,
+    /**
+     * 女
+     */
+    WOMAN = 2
+}
+/**
+ * 用户信息
+ */
+export interface UserInfo {
+    /**
+     * 用户ID
+     */
+    id: string;
+    /**
+     * 用户真实姓名
+     */
+    name: string;
+    /**
+     * 用户名
+     */
+    username: string;
+    /**
+     * 性别
+     */
+    sex: Sex;
+    /**
+     * 身份识别号
+     */
+    idCode: string;
+    /**
+     * 手机号
+     */
+    phone: string;
+    /**
+     * 邮箱
+     */
+    email: string;
+    /**
+     * 生日
+     */
+    birthday: string;
+    /**
+     * 备注
+     */
+    comments?: string;
+    /**
+     * 是否为初始化管理员
+     */
+    isInitManger?: boolean;
+    /**
+     * 头像
+     */
+    icon: string;
+    /**
+     * 机构信息
+     */
+    orgList?: UserOrgInfo[];
+}
