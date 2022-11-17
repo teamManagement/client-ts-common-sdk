@@ -291,11 +291,11 @@ export interface AppInfo {
   /**
    * 作者信息
    */
-  authorInfo: UserInfo;
+  authorInfo?: UserInfo;
   /**
    * 贡献者列表
    */
-  contributorsList: UserInfo[];
+  contributorsList?: UserInfo[];
   /**
    * 是否为内部API应用
    */
@@ -335,7 +335,7 @@ export interface AppInfo {
    /**
   *轮播图
   */
-  slideshow:SlideInfo[];
+  slideshow?:SlideInfo[];
   /**
    * 是否正在加载中
    */

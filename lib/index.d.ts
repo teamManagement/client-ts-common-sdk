@@ -197,6 +197,15 @@ export declare enum IconType {
     ICON_FONT = 1
 }
 /**
+ * 轮播图类别
+ */
+export interface SlideInfo {
+    /**
+     * image信息
+     */
+    value: string;
+}
+/**
  * 应用信息
  */
 export interface AppInfo {
@@ -215,11 +224,11 @@ export interface AppInfo {
     /**
      * 作者信息
      */
-    authorInfo: UserInfo;
+    authorInfo?: UserInfo;
     /**
      * 贡献者列表
      */
-    contributorsList: UserInfo[];
+    contributorsList?: UserInfo[];
     /**
      * 是否为内部API应用
      */
@@ -256,6 +265,10 @@ export interface AppInfo {
      * 版本
      */
     version: string;
+    /**
+   *轮播图
+   */
+    slideshow?: SlideInfo[];
     /**
      * 是否正在加载中
      */
@@ -358,7 +371,7 @@ export declare const contextmenu: {
      */
     clearAll(): void;
 };
-/**z
+/**
  * 机构信息
  */
 export interface OrgInfo {
