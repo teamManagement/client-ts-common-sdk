@@ -286,6 +286,7 @@ export declare const current: {
      * 当前的应用信息
      */
     appInfo: AppInfo;
+    userInfo: UserInfo;
 };
 /**
  * 菜单项

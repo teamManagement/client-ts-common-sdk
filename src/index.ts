@@ -354,6 +354,10 @@ export const current = {
    * 当前的应用信息
    */
   appInfo: _currentSdk.appInfo as AppInfo,
+  /**
+   * 当前登录的用户
+   */
+  userInfo: _currentSdk.userInfo as UserInfo,
 };
 
 /**
