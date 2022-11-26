@@ -286,6 +286,9 @@ export declare const current: {
      * 当前的应用信息
      */
     appInfo: AppInfo;
+    /**
+     * 当前登录的用户
+     */
     userInfo: UserInfo;
 };
 /**
