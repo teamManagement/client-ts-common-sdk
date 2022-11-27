@@ -816,6 +816,56 @@ export interface DbSyncInterface {
   allDocs<T>(key: string | string[]): T & { _id: string; _rev: string };
 
   /**
+   * 保存二进制或base64为附件
+   * @param id id
+   * @param data 二进制或base64格式数据
+   * @param type mime type
+   */
+  putAttachment(id: string, data: Uint8Array | string, type: string): void;
+
+  /**
+   * 保存本地路径文件为一个附件
+   * @param id id
+   * @param localPath 本地文件路径
+   * @param type mime type如果不存在则根据文件内容进行推断
+   */
+  putAttachmentByLocalFilepath(
+    id: string,
+    localPath: string,
+    type?: string
+  ): void;
+
+  /**
+   * 根据ID获取一个二进制附件
+   * @param id id
+   */
+  getAttachment(id: string): Uint8Array;
+
+  /**
+   * 根据id获取一个blob格式的附件
+   * @param id id
+   */
+  getAttachmentToBlob(id: string): Blob;
+
+  /**
+   * 根据id获取一个blob url格式的附件
+   * @param id id
+   */
+  getAttachmentToBlobUrl(id: string): Blob;
+
+  /**
+   * 根据ID获取附件类型
+   * @param id id
+   */
+  getAttachmentType(id: string): String;
+
+  /**
+   * 删除附件
+   * @param id 要删除的ID
+   */
+  removeAttachment(id: string): void;
+
+  /**
    * 索引相关接口
    */
   index: {
@@ -894,7 +944,7 @@ export interface DbPromiseInterface {
     id: string,
     data: Uint8Array | string,
     type: string
-  ): Promise<DbResponse>;
+  ): Promise<void>;
 
   /**
    * 保存本地路径文件为一个附件
@@ -906,7 +956,7 @@ export interface DbPromiseInterface {
     id: string,
     localPath: string,
     type?: string
-  ): Promise<DbResponse>;
+  ): Promise<void>;
 
   /**
    * 根据ID获取一个二进制附件
@@ -931,6 +981,12 @@ export interface DbPromiseInterface {
    * @param id id
    */
   getAttachmentType(id: string): Promise<String>;
+
+  /**
+   * 删除附件
+   * @param id 要删除的ID
+   */
+  removeAttachment(id: string): Promise<void>;
 
   /**
    * 索引相关接口

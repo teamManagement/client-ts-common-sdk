@@ -808,6 +808,11 @@ export interface DbPromiseInterface {
      */
     getAttachmentType(id: string): Promise<String>;
     /**
+     * 删除附件
+     * @param id 要删除的ID
+     */
+    removeAttachment(id: string): Promise<any>;
+    /**
      * 索引相关接口
      */
     index: {
