@@ -1,6 +1,27 @@
 const _windows = window as any;
 const _teamworkSdk = _windows.teamworkSDK;
 
+const _idSdk = _teamworkSdk.id;
+/**
+ * id相关api
+ */
+export const id = {
+  /**
+   * 全局自增序列号
+   * @returns 序列号
+   */
+  seq(): number {
+    return _idSdk.seq();
+  },
+  /**
+   * 创建一个uuid
+   * @returns uuid
+   */
+  uuid(): string {
+    return _idSdk.uuid();
+  },
+};
+
 const _storeSdk = _teamworkSdk.store;
 /**
  * 存储相关
