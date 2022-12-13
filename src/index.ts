@@ -345,20 +345,68 @@ export interface AppInfo {
   debugging?: boolean;
 }
 
-const _currentSdk = _teamworkSdk.current;
+/**
+ * 在线用户变更处理方法
+ */
+export type OnlineUserChangeHandler = (
+  /**
+   * 在线状态:
+   * online: 在线
+   * offline: 离线
+   */
+  status: "online" | "offline",
+  /**
+   * 用户ID
+   */
+  userId: string,
+  /**
+   * 最新的在线用户列表
+   */
+  onlineUserIdList: string[]
+) => void;
+
 /**
  * 当前信息
  */
-export const current = {
+export interface Current {
   /**
-   * 当前的应用信息
+   * 应用信息
    */
-  appInfo: _currentSdk.appInfo as AppInfo,
+  appInfo: AppInfo;
   /**
-   * 当前登录的用户
+   * 用户信息
    */
-  userInfo: _currentSdk.userInfo as UserInfo,
-};
+  userInfo: UserInfo;
+  /**
+   * 在线用户ID列表
+   */
+  onlineUserIdList(): string[];
+  /**
+   * 注册用户状态变更处理器
+   * @param id 处理器id
+   */
+  registerOnlineUserChange(id: string, handler: OnlineUserChangeHandler): void;
+  /**
+   * 注销用户状态变更处理器
+   * @param id 处理器ID
+   */
+  unRegisterOnlineUserChange(id: string): void;
+}
+
+export const current = _teamworkSdk.current as Current;
+/**
+ * 当前信息
+ */
+// export const current = {
+//   /**
+//    * 当前的应用信息
+//    */
+//   appInfo: _currentSdk.appInfo as AppInfo,
+//   /**
+//    * 当前登录的用户
+//    */
+//   userInfo: _currentSdk.userInfo as UserInfo,
+// };
 
 /**
  * 菜单项
