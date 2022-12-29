@@ -20,6 +20,9 @@ export const id = {
   uuid(): string {
     return _idSdk.uuid();
   },
+  unique(): Promise<string> {
+    return _idSdk.unique();
+  },
 };
 
 const _storeSdk = _teamworkSdk.store;
