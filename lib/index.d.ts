@@ -1,4 +1,20 @@
 /**
+ * id相关api
+ */
+export declare const id: {
+    /**
+     * 全局自增序列号
+     * @returns 序列号
+     */
+    seq(): number;
+    /**
+     * 创建一个uuid
+     * @returns uuid
+     */
+    uuid(): string;
+    unique(): Promise<string>;
+};
+/**
  * 存储相关
  */
 export declare const store: {

@@ -1,6 +1,30 @@
 const _windows = window as any;
 const _teamworkSdk = _windows.teamworkSDK;
 
+const _idSdk = _teamworkSdk.id;
+/**
+ * id相关api
+ */
+export const id = {
+  /**
+   * 全局自增序列号
+   * @returns 序列号
+   */
+  seq(): number {
+    return _idSdk.seq();
+  },
+  /**
+   * 创建一个uuid
+   * @returns uuid
+   */
+  uuid(): string {
+    return _idSdk.uuid();
+  },
+  unique(): Promise<string> {
+    return _idSdk.unique();
+  },
+};
+
 const _storeSdk = _teamworkSdk.store;
 /**
  * 存储相关
@@ -647,11 +671,17 @@ export interface UserInfo {
   /**
    * 生日
    */
-  birthday: string;
+  birthday?: string;
   /**
    * 备注
    */
   comments?: string;
+
+  /**
+   *当前登录机器ip
+   */
+   loginIp:string;
+
   /**
    * 是否为初始化管理员
    */
@@ -659,7 +689,7 @@ export interface UserInfo {
   /**
    * 头像
    */
-  icon: string;
+  icon?: string;
   /**
    * 机构信息
    */
@@ -671,7 +701,7 @@ export interface UserInfo {
   /**
    * 是否为应用商店的管理员
    */
-  isAppStoreManager: boolean;
+  isAppStoreManager?: boolean;
 }
 
 /**
