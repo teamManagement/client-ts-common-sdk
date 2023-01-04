@@ -471,6 +471,22 @@ export interface OrgInfo {
      * 上级ID列表
      */
     parentIdList?: string[];
+    /**
+     * 岗位列表
+     */
+    postList?: PostInfo[];
+    /**
+     * 职位列表
+     */
+    jobList?: JobInfo[];
+    /**
+     * 创建时间
+     */
+    createAt: string;
+    /**
+     * 最后更新时间
+     */
+    updateAt: string;
 }
 /**
  * 岗位信息
@@ -567,11 +583,15 @@ export interface UserInfo {
     /**
      * 生日
      */
-    birthday: string;
+    birthday?: string;
     /**
      * 备注
      */
     comments?: string;
+    /**
+     *当前登录机器ip
+     */
+    loginIp: string;
     /**
      * 是否为初始化管理员
      */
@@ -579,7 +599,7 @@ export interface UserInfo {
     /**
      * 头像
      */
-    icon: string;
+    icon?: string;
     /**
      * 机构信息
      */
@@ -591,7 +611,7 @@ export interface UserInfo {
     /**
      * 是否为应用商店的管理员
      */
-    isAppStoreManager: boolean;
+    isAppStoreManager?: boolean;
 }
 /**
  * 数据库操作基础响应
