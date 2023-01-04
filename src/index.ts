@@ -570,6 +570,22 @@ export interface OrgInfo {
    * 上级ID列表
    */
   parentIdList?: string[];
+  /**
+   * 岗位列表
+   */
+  postList?: PostInfo[];
+  /**
+   * 职位列表
+   */
+  jobList?: JobInfo[];
+  /**
+   * 创建时间
+   */
+  createAt: string;
+  /**
+   * 最后更新时间
+   */
+  updateAt: string;
 }
 
 /**
