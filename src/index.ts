@@ -687,11 +687,17 @@ export interface UserInfo {
   /**
    * 生日
    */
-  birthday: string;
+  birthday?: string;
   /**
    * 备注
    */
   comments?: string;
+
+  /**
+   *当前登录机器ip
+   */
+   loginIp:string;
+
   /**
    * 是否为初始化管理员
    */
@@ -699,7 +705,7 @@ export interface UserInfo {
   /**
    * 头像
    */
-  icon: string;
+  icon?: string;
   /**
    * 机构信息
    */
@@ -711,7 +717,7 @@ export interface UserInfo {
   /**
    * 是否为应用商店的管理员
    */
-  isAppStoreManager: boolean;
+  isAppStoreManager?: boolean;
 }
 
 /**
