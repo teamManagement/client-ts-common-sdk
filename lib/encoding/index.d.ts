@@ -24,9 +24,9 @@ export interface EncodingApi {
     hexDecode(hexStr: string): Promise<string>;
     sync: {
         base64(str: string): string;
-        base64Decode(base64Str: string): Promise<string>;
-        hex(str: string): Promise<string>;
-        hexDecode(hexStr: string): Promise<string>;
+        base64Decode(base64Str: string): string;
+        hex(str: string): string;
+        hexDecode(hexStr: string): string;
     };
 }
 export declare const encoding: EncodingApi;
