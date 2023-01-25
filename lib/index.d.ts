@@ -10,3 +10,4 @@ export * from "./dialog/index";
 export * from "./db/index";
 export * from "./current/index";
 export * from "./contextmenu/index";
+export * from "./encoding/index";
