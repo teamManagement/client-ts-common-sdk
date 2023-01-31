@@ -1,7 +1,7 @@
 {
-  "name": "@byzk/teamwork-sdk",
-  "version": "0.1.0",
-  "description": "博雅中科 teamwork 平台客户端sdk",
+  "name": "@teamworktoolbox/sdk",
+  "version": "0.1.4",
+  "description": "teamwork toolbox客户端sdk",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
