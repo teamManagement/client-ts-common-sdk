@@ -26,4 +26,4 @@ export interface ExecApi {
 /**
  * 执行子程序
  */
-export const exec = _teamworkSdk.exec;
+export const exec: ExecApi = _teamworkSdk.exec;

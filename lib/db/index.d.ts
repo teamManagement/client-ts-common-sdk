@@ -226,7 +226,7 @@ export interface DbSyncInterface {
 /**
  * 数据库异步接口
  */
-export interface DbPromiseInterface {
+export interface DbPromiseApi {
     /**
      * 添加数据
      * @param data 要保存的数据
@@ -341,7 +341,7 @@ export interface DbPromiseInterface {
         }>;
     };
 }
-export interface DbInterface extends DbPromiseInterface {
+export interface DbApi extends DbPromiseApi {
     sync: DbSyncInterface;
 }
-export declare const db: DbInterface;
+export declare const db: DbApi;

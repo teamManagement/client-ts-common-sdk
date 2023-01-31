@@ -70,4 +70,4 @@ export interface CacheApi {
 /**
  * 缓存相关
  */
-export const cache = _cacheSdk;
+export const cache: CacheApi = _cacheSdk;

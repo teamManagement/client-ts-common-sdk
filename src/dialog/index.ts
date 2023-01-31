@@ -129,7 +129,7 @@ export interface SaveDialogOptions {
 /**
  * 对话框api
  */
-export interface Dialog {
+export interface DialogApi {
   /**
    * 打开对话框
    * @param options 选项
@@ -144,4 +144,4 @@ export interface Dialog {
   showSaveDialog(options?: SaveDialogOptions): string | undefined;
 }
 
-export const dialog: Dialog = _teamworkSdk.dialog;
+export const dialog: DialogApi = _teamworkSdk.dialog;

@@ -7,7 +7,7 @@ export interface IdApi {
   /**
    * 自增序列
    */
-  seq(): number;
+  seq(): Promise<number>;
   /**
    * uuid
    */

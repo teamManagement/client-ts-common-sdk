@@ -107,7 +107,7 @@ export interface SaveDialogOptions {
 /**
  * 对话框api
  */
-export interface Dialog {
+export interface DialogApi {
     /**
      * 打开对话框
      * @param options 选项
@@ -121,4 +121,4 @@ export interface Dialog {
      */
     showSaveDialog(options?: SaveDialogOptions): string | undefined;
 }
-export declare const dialog: Dialog;
+export declare const dialog: DialogApi;

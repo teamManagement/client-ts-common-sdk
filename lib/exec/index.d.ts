@@ -26,4 +26,4 @@ export interface ExecApi {
 /**
  * 执行子程序
  */
-export declare const exec: any;
+export declare const exec: ExecApi;

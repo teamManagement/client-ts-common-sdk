@@ -65,4 +65,4 @@ export interface CacheApi {
 /**
  * 缓存相关
  */
-export declare const cache: any;
+export declare const cache: CacheApi;

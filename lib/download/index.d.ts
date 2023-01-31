@@ -21,7 +21,7 @@ export interface DownloadOptions {
      */
     savePath: string;
 }
-export interface Download {
+export interface DownloadApi {
     /**
      * 下载http文件
      * @param url 要下载的路径
@@ -29,4 +29,4 @@ export interface Download {
      */
     httpFile(url: string, options?: DownloadOptions): DownloadOperationHandler;
 }
-export declare const download: Download;
+export declare const download: DownloadApi;
