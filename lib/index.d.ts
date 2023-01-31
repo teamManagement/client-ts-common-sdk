@@ -325,6 +325,10 @@ export interface Current {
      */
     userInfo: UserInfo;
     /**
+     * 获取token信息
+     */
+    token(): string;
+    /**
      * 在线用户ID列表
      */
     onlineUserIdList(): string[];
